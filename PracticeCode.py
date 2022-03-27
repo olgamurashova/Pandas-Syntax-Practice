@@ -51,3 +51,8 @@ f2 = pd.DataFrame([
   ])
 
 print(df2)
+
+# 4. Writing a CSV file:
+
+df.to_csv('data.csv')
+df1.to_csv('storedata.csv')
