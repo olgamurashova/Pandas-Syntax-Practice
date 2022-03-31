@@ -69,3 +69,7 @@ data = pd.read_csv('vt_tax_data_2016.tsv',sep="\t")
 counts = data.groupby("agi_stub").N1.sum()
 counts.plot.bar()
 plt.show()
+
+# 6. Displaying how many rows and columns are in a table:
+
+print(df.shape)
