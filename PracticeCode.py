@@ -86,5 +86,18 @@ col_num = [1, 2, 5]
 # Checking if two tables contain same columns
 print(df.equals(df2))
 
-# Limiting rows using nrows:
-             
+# 8. Limiting rows using nrows:
+  
+ df = pd.read_csv('tablename.csv', nrows = 1000)
+ print(df.shape)
+ 
+#9. Assigning column names when importing specified number of rows using nrows:
+ 
+ df1 = pd.read_csv('tablename.csv', nrows = 1000)
+ col_names = list(df1)
+ df2 = pd.read_csv('tablename.csv', 
+                   nrows = 500,
+                   skiprows = 1000,
+                   header = None,
+                   names = col_names)
+  print(df.header(1))
