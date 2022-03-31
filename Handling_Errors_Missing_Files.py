@@ -44,3 +44,13 @@ data = pd.read_csv("vt_tax_data_2016.csv",
 
 # View rows with NA ZIP codes
 print(data[data.zipcode.isna()])
+
+# 7. Skipping bad data:
+
+ # Set warn_bad_lines to issue warnings about bad records
+  data = pd.read_csv("vt_tax_data_2016_corrupt.csv", 
+                     error_bad_lines=False, 
+                     warn_bad_lines = True)
+  
+  # View first 5 records
+  print(data.head())
