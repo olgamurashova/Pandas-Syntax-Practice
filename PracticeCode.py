@@ -74,7 +74,7 @@ plt.show()
 
 print(df.shape)
 
-# 7. Limiting columns/Choose columns to load by name and number:
+# 7. Limiting columns/Choose columns to load by name and number using usecols:
 
 col_names = ['column_name1', column_name2', 'column_name3']
 col_num = [1, 2, 5]
@@ -85,3 +85,6 @@ col_num = [1, 2, 5]
  df_1 = pd.read_csv('tablename.csv', usecols = col_num)
 # Checking if two tables contain same columns
 print(df.equals(df2))
+
+# Limiting rows using nrows:
+             
