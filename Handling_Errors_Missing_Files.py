@@ -1,4 +1,4 @@
-# 1. Cheking data types:
+# 1. Checking data types:
 
 print('tablename.csv'.dtypes)
 
