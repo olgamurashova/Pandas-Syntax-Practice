@@ -11,7 +11,7 @@ print(df.sum())
 # Count Nas/Checking how many values are missing in the table
 print(df.isna().sum())
 
-# Loading data/ Casting True/False columns as Boolean
+# Loading data/ Casting True/False columns as Boolean (Changes all values dtype to Boolean
 bool_data = pd.read_excel('tablename.xlsx',
                           dtype = {
                             'columnname':bool,
@@ -19,4 +19,17 @@ bool_data = pd.read_excel('tablename.xlsx',
                             'columnname':bool})
 
 
-# 2. 
+# 2. Setting custom true/False values
+
+bool_data = pd.read_excel('tablename.xlsx',
+                          dtype = {
+                            'columnname':bool,
+                            'columnname':bool,
+                            'columnname':bool},
+                            'true_values' = ['Yes'],
+                             'false_values' = ['No'])
+To avoid fame Na values being True, we should keep original value type (like float)
+
+# 3. 
+
+
