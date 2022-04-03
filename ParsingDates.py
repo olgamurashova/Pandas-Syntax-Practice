@@ -29,3 +29,9 @@ df = pd.read_excel('tablename.xlsx',
                     parse_dates = date_cols)
  print(df.head(3))
    
+ # 5. Parsing non standard dates:
+ # We build the string format first/ Month/Day/Year and Hour/Minute/Second format:
+string_format = '%m%d%Y %H:%M:%S'                            
+# then, we convert to datetime and assign conversiton to our column and pass string_format to format:
+ df['column_name'] = pd.to_datetime(df['column_name'], 
+                                    format = string_format)
