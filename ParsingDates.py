@@ -18,3 +18,14 @@ date_cols = ['column1',
                
 df = pd.read_excel('tablename.xlsx',
                    parse_dates = date_cols)
+               
+# 4. To control the column names before parsing the datetime columns, we create a dictionary:
+              
+ date_cols = { "Part1Start": "Part1StartTime",
+              "Part1End": "Part1EndTime",
+              "Part2Start":["Part2StartDate, "Part2StartTtime"]}
+                            
+ df = pd.read_excel('tablename.xlsx',
+                    parse_dates = date_cols)
+ print(df.head(3))
+   
