@@ -35,3 +35,21 @@ string_format = '%m%d%Y %H:%M:%S'
 # then, we convert to datetime and assign conversiton to our column and pass string_format to format:
  df['column_name'] = pd.to_datetime(df['column_name'], 
                                     format = string_format)
+
+# 6. # Load file, with Part1StartTime parsed as datetime data
+survey_data = pd.read_excel("fcc_survey.xlsx",
+                            parse_dates=["Part1StartTime"])
+
+# Print first few values of Part1StartTime
+print(survey_data.Part1StartTime.head())
+                            
+# 7. # Create dict of columns to combine into new datetime column
+datetime_cols = {"Part2Start": ["Part2StartDate", "Part2StartTime"]}
+
+
+# Load file, supplying the dict to parse_dates
+survey_data = pd.read_excel("fcc_survey_dts.xlsx",
+                            parse_dates = datetime_cols)
+
+# View summary statistics about Part2Start
+print(survey_data.Part2Start.describe())                            
