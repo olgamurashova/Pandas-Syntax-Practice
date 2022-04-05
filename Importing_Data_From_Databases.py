@@ -1,4 +1,4 @@
-# Import sqlalchemy's create_engine() function
+# 1. Import sqlalchemy's create_engine() function
 from sqlalchemy import create_engine
 
 # Create the database engine
