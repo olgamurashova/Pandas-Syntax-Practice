@@ -201,4 +201,19 @@ leak_calls = pd.read_sql(query, engine)
 # View the dataframe
 print(leak_calls.head())
 
-# 15. 
+# 15. # Query to get heat/hot water call counts by created_date
+query = """
+SELECT hpd311calls.created_date, 
+       COUNT(*)
+  FROM hpd311calls 
+  WHERE hpd311calls.complaint_type = 'HEAT/HOT WATER'
+  GROUP BY hpd311calls.created_date;
+"""
+
+# Query database and save results as df
+df = pd.read_sql(query, engine)
+
+# View first 5 records
+print(df.head())
+
+# 16. 
