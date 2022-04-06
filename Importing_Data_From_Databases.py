@@ -174,4 +174,17 @@ calls_with_weather = pd.read_sql(query, engine)
 # View the dataframe to make sure all columns were joined
 print(calls_with_weather.head())
 
-#13. 
+#13. # Query to get hpd311calls and precipitation values
+query = """
+SELECT hpd311calls.*, weather.prcp
+  FROM hpd311calls
+  JOIN weather
+  ON hpd311calls.created_date = weather.date;"""
+
+# Load query results into the leak_calls dataframe
+leak_calls = pd.read_sql(query, engine)
+
+# View the dataframe
+print(leak_calls.head())
+
+#14. 
