@@ -47,3 +47,7 @@ data = response.json()
 # Load "businesses" values to a dataframe and print names
 cafes = pd.DataFrame(data["businesses"])
 print(cafes.name)
+
+
+NESTED JSON
+
