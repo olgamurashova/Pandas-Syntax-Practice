@@ -84,3 +84,5 @@ flat_cafes = json_normalize(data["businesses"],
 # View the data
 print(flat_cafes.head())
 
+
+
