@@ -15,4 +15,19 @@ cafes = top_50_cafes.append(next_50_cafes, ignore_index=True)
 # Print shape of cafes
 print(cafes.shape)
 
-#2. 
+#2. # Merge crosswalk into cafes on their zip code fields
+cafes_with_pumas = cafes.merge(
+    crosswalk,
+    left_on = "location_zip_code",
+    right_on = "zipcode"
+)
+
+# Merge pop_data into cafes_with_pumas on puma field
+cafes_with_pop = cafes_with_pumas.merge(
+    pop_data,
+    left_on = "puma",
+    right_on = "puma"
+)
+
+# View the data
+print(cafes_with_pop.head())
